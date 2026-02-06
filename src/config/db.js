@@ -6,8 +6,8 @@ const config={
     database:process.env.DB_NAME,
     port:parseInt(process.env.DB_PORT,10),
     options:{
-        encrypt:false,
-        trustServerCertificate:true
+        encrypt:true, //for azure tru for docker false
+        trustServerCertificate:false //change to true for local dev / self-signed certs
     }
 };
 const poolPromise = new sql.ConnectionPool(config)
